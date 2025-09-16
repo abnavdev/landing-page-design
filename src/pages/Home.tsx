@@ -5,6 +5,7 @@ import Features from '../components/Features'
 import Steps from '../components/Steps'
 import User from '../components/User'
 import Reviews from '../components/Reviews'
+import Footer from '../components/Footer'
 
 const Home: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
       <Steps />
       <User />
       <Reviews />
+      <Footer />
     </div>
   )
 }
