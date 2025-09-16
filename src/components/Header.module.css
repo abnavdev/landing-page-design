@@ -4,15 +4,50 @@
   width: 100%;
   background: transparent;
   z-index: 1000;
-  padding-top: 8px;
+  padding: 8px 0;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+.header.scrolled {
+  background: white;
+}
+
+.header.scrolled .navItem {
+  color: #024781; /* Blue color */
+}
+
+.loginOverride {
+  /* empty base; will be combined with Button's variant class */
+}
+
+.header.scrolled .loginOverride {
+  color: #024781 ;
+  border: 1px solid #024781 ;
+  background: transparent ;
+  outline: none ;       /* remove original white outline */
+  outline-offset: 0 ;   /* neutralize offset */
+  box-shadow: none ;    /* remove any focus rings */
+  padding: 14px 40px;             /* preserve original spacing */
+  border-radius: 40px;            /* match button shape */
+}
+
+.header.scrolled .trialBtn {
+  background: transparent;
+  color: #024781;
+  outline: 1px solid #024781;
+  outline-offset: -1px;
 }
 
 /* Header uses the global `.container` defined in `src/index.css` to follow the 12-column grid. */
 
 .logo {
   grid-column: span 3;
-  width: 80px;
-  height: 100px;
+  width: 56px;
+  height: 64px;
 }
 
 .nav {

@@ -3,6 +3,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Use border-box globally to ensure padding/border are included in width calculations */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .container {
   display: grid;
   max-width: calc(100vw - 160px);

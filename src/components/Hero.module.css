@@ -1,12 +1,13 @@
 .hero {
-  width: 100vw;
-  height: 100vh;
+  width: 100%; /* use 100% so horizontal margins/scrollbar don't create overflow */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   text-align: center;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+  position: relative; /* Ensure overlay is positioned relative to hero */
 }
 
 .content {

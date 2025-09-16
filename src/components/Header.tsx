@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import styles from './Header.module.css'
 import logo from '../assets/logo.png'
 import Button from './Button'
+import useScrollNavigation from '../hooks/useScrollNavigation'
 
 const Header: React.FC = () => {
   // NEW: State for mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // NEW: Use scroll navigation hook
+  const { isHidden, hasScrolled } = useScrollNavigation()
 
   // NEW: Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -13,15 +17,15 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isHidden ? styles.hidden : ''} ${hasScrolled ? styles.scrolled : ''}`}>
       <div className="container">
         <img className={styles.logo} src={logo} alt="Logo" />
         <div className={styles.nav}>
           <div className={styles.navItem}>Find Tutors</div>
           <div className={styles.navItem}>How It Works</div>
           <div className={styles.navItem}>Pricing</div>
-          <div className={styles.buttons}>
-            <Button variant="secondary">Login</Button>
+            <div className={styles.buttons}>
+            <Button variant="secondary" className={styles.loginOverride}>Login</Button>
             <Button variant="primary">Start Free Trial</Button>
           </div>
         </div>
