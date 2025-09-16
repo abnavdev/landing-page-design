@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import Features from '../components/Features'
 import Steps from '../components/Steps'
 import User from '../components/User'
+import Reviews from '../components/Reviews'
 
 const Home: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
       </div>
       <Steps />
       <User />
+      <Reviews />
     </div>
   )
 }
