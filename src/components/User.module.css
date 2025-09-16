@@ -17,7 +17,7 @@
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	gap: 160px;
+	gap: 240px;
 }
 
 /* Section grid: each section is a 12-column grid */
