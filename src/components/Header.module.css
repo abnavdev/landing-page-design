@@ -1,0 +1,270 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+  padding-top: 8px;
+}
+
+/* Header uses the global `.container` defined in `src/index.css` to follow the 12-column grid. */
+
+.logo {
+  grid-column: span 3;
+  width: 80px;
+  height: 100px;
+}
+
+.nav {
+  grid-column: span 9;
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  align-items: center;
+}
+
+.navItem {
+  color: white;
+  font-size: 13px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 300;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.secondaryBtn {
+  padding: 14px 40px;
+  border-radius: 40px;
+  outline: 1px white solid;
+  outline-offset: -1px;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  padding: 14px 24px;
+  background: #024781;
+  border-radius: 40px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Lexend Deca', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+/* NEW: Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+  align-self: center; /* ensure vertical centering inside the grid row */
+  margin-right: 16px; /* add horizontal breathing room from the container edge */
+}
+
+.hamburgerLine {
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  display: block;
+}
+
+.hamburger.active .hamburgerLine:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburgerLine:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: rgba(255, 255, 255);
+  backdrop-filter: blur(10px);
+  padding: 80px 30px 30px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1001;
+}
+
+.mobileMenu.active {
+  right: 0;
+}
+
+.mobileNavItem {
+  display: block;
+  color:#0056b3;
+  font-size: 16px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.mobileButtons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobileButtons .secondaryBtn,
+.mobileButtons .primaryBtn {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Mobile: 320px - 767px */
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 12px 0px;
+  }
+  
+  .logo {
+    grid-column: span 6;
+    width: 60px;
+    height: 75px;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+    grid-column: span 6;
+    justify-self: end;
+    align-self: center; /* explicitly center on mobile */
+  }
+  
+  .mobileMenu {
+    display: block;
+  }
+}
+
+/* Tablet: 768px - 1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    padding: 12px 0px;
+  }
+  
+  .logo {
+    grid-column: span 2;
+    width: 70px;
+    height: 87px;
+  }
+  
+  .nav {
+    grid-column: span 10;
+    gap: 16px;
+  }
+  
+  .navItem {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+  
+  .secondaryBtn {
+    padding: 12px 32px;
+    font-size: 13px;
+  }
+  
+  .primaryBtn {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Laptop: 1024px - 1439px */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .header {
+    padding: 12px 0px;
+  }
+  
+  .nav {
+    gap: 20px;
+  }
+  
+  .navItem {
+    font-size: 12px;
+  }
+  
+  .secondaryBtn {
+    padding: 13px 36px;
+  }
+  
+  .primaryBtn {
+    padding: 13px 22px;
+  }
+}
+
+/* Mac/Desktop: 1440px - 1919px */
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  /* Original styles are optimized for this range */
+}
+
+/* Large Desktop: 1920px+ */
+@media screen and (min-width: 1920px) {
+  .header {
+    padding-top: 12px;
+  }
+  
+  .logo {
+    width: 90px;
+    height: 112px;
+  }
+  
+  .nav {
+    gap: 32px;
+  }
+  
+  .navItem {
+    font-size: 14px;
+  }
+  
+  .secondaryBtn {
+    padding: 16px 48px;
+    font-size: 15px;
+  }
+  
+  .primaryBtn {
+    padding: 16px 32px;
+    font-size: 15px;
+  }
+}
