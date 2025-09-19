@@ -1,0 +1,161 @@
+.section {
+  width: 100vw; /* full viewport width for background bleed */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* center the full-bleed element without negative margins */
+  padding-top: 160px;
+  padding-bottom: 80px;
+  background: #EBFBFC;
+  overflow: hidden;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+  grid-column: 1 / -1; /* full width within the .container */
+}
+
+.title {
+  color: #4A4E5E;
+  font-size: 40px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 700;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.subtitle {
+  color: #4A4E5E;
+  font-size: 16px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 400;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.searchCard {
+  grid-column: 3 / span 8; /* center: columns 3-10 (8 columns wide) */
+  height: auto;
+  padding: 16px 16px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.searchInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 56px; /* fixed height */
+  box-sizing: border-box;
+  background: #FEFEFE;
+  border-radius: 10px;
+  outline: 1px solid #B9B9B9;
+  outline-offset: -1px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 18px;
+}
+
+.searchIcon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23636363' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='7'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+}
+
+.inputField {
+  flex: 1 1 auto;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #636363;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 500;
+  line-height: 30px;
+  min-width: 0; /* allow flex truncation */
+  height: 100%;
+  padding: 0; /* ensure no extra vertical padding */
+}
+
+.inputText {
+  color: #636363;
+  font-size: 22px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+
+.filtersButtonWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 28px; /* horizontal padding only so height can be fixed */
+  padding-block: 0; /* explicitly remove vertical padding from inherited button styles */
+  box-sizing: border-box;
+  border-radius: 10px;
+  min-width: 200px;
+  min-height: 56px;
+  line-height: 1; /* avoid extra line-height expanding the button */
+}
+
+.filterIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 3H2v2h20V3zM18 9H6v2h12V9zM14 15H10v2h4v-2z' fill='%23FFFFFF'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+}
+
+.filterLabel {
+  color: white;
+  font-size: 16px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .searchCard {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .searchInput {
+    width: 100%;
+    height: 56px;
+  }
+
+  .filtersButtonWrap {
+    width: 100%;
+    padding: 0 8px;
+    padding-block: 0;
+    height: 56px;
+    min-height: 56px;
+  }
+}

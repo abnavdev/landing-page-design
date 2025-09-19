@@ -1,0 +1,41 @@
+/* Styles for the Tutors page (empty boilerplate) */
+.tutors-page {
+  background: white;
+  color: #111827;
+}
+
+/* Add page-specific layout rules here */
+/* Page-level tuning is handled by component containers and the global .container grid. */
+
+/* Tutors page header overrides: make nav items and login button blue only on the Tutors page */
+.tutors-page header .navItem,
+.tutors-page header .nav-item{
+  color: #024781 !important;
+  background: transparent !important;
+}
+
+.tutors-page header .secondaryBtn,
+.tutors-page header .login-override {
+  color: #024781 !important;
+  outline: 1px solid #024781 !important;
+  background: transparent !important;
+}
+
+.tutors-page header .login-override {
+  border: 1px solid #024781 !important;
+  padding: 14px 40px !important;
+  border-radius: 40px !important;
+}
+
+@media (max-width: 1024px) {
+  .tutors-section .inner,
+  .tutors-section {
+    padding: 0 16px;
+  min-height: 60vh;
+  }
+
+  .tutors-section .left,
+  .tutors-section .right {
+    grid-column: 1 / -1;
+  }
+}

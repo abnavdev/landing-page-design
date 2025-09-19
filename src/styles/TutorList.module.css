@@ -1,0 +1,84 @@
+.listSection {
+  width: 100%;
+  display: block; /* full-bleed section; inner grid will constrain content to 12-col layout */
+  padding: 80px 0;
+}
+
+/* Use the global .container (defined in src/styles/index.css) for the 12-column grid and side margins. */
+
+.headerWrap {
+  grid-column: 3 / span 8; /* center header within the 12-column grid (columns 3-10) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  align-self: stretch;
+  height: 64px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 40px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 700;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.subtitle {
+  align-self: stretch;
+  height: 30px;
+  text-align: center;
+  color: #636363;
+  font-size: 18px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 500;
+  line-height: 30px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.cardsGrid {
+  grid-column: 1 / -1; /* allow cards to use full width of inner container; individual cards will size themselves */
+  display: grid;
+  grid-template-columns: 1fr; /* single column: stack cards vertically */
+  gap: 40px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.cardsGrid > * {
+  width: 100%; /* ensure child cards expand to full available width */
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 34px;
+  }
+  .cardsGrid {
+    gap: 16px;
+    grid-template-columns: 1fr; /* single column on narrow screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contentWrapper {
+    padding: 0 12px;
+    max-width: calc(100vw - 24px);
+  }
+  .headerWrap {
+    grid-column: 1 / -1; /* header span full width on very small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+}

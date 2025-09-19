@@ -24,12 +24,12 @@ const Header: React.FC = () => {
           <img className={styles.logo} src={logo} alt="Logo" />
         </Link>
         <div className={styles.nav}>
-          <Link to="/" className={styles.navItem}>Home</Link>
-          <Link to="/about" className={styles.navItem}>About</Link>
-          <div className={styles.navItem}>Find Tutors</div>
-          <div className={styles.navItem}>Pricing</div>
+          <Link to="/" className={`${styles.navItem} nav-item`}>Home</Link>
+          <Link to="/about" className={`${styles.navItem} nav-item`}>About</Link>
+          <Link to="/tutors" className={`${styles.navItem} nav-item`}>Find Tutors</Link>
+          <Link to="/pricing" className={`${styles.navItem} nav-item`}>Pricing</Link>
             <div className={styles.buttons}>
-            <Button variant="secondary" className={styles.loginOverride}>Login</Button>
+            <Button variant="secondary" className={`${styles.loginOverride} login-override`}>Login</Button>
             <Button variant="primary">Start Free Trial</Button>
           </div>
         </div>
@@ -48,20 +48,20 @@ const Header: React.FC = () => {
       
       {/* NEW: Mobile Menu */}
       <nav className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.active : ''}`}>
-        <Link to="/" className={styles.mobileNavItem} onClick={toggleMobileMenu}>
+        <Link to="/" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
           Home
         </Link>
-        <Link to="/about" className={styles.mobileNavItem} onClick={toggleMobileMenu}>
+        <Link to="/about" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
           About
         </Link>
-        <div className={styles.mobileNavItem} onClick={toggleMobileMenu}>
+        <Link to="/tutors" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
           Find Tutors
-        </div>
-        <div className={styles.mobileNavItem} onClick={toggleMobileMenu}>
+        </Link>
+        <Link to="/pricing" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
           Pricing
-        </div>
+        </Link>
         <div className={styles.mobileButtons}>
-          <button className={styles.secondaryBtn} onClick={toggleMobileMenu}>
+          <button className={`${styles.secondaryBtn} login-override`} onClick={toggleMobileMenu}>
             Login
           </button>
           <button className={styles.primaryBtn} onClick={toggleMobileMenu}>
