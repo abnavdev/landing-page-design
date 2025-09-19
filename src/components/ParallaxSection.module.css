@@ -1,0 +1,55 @@
+/* Parallax base styles */
+.parallax-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.parallax-visible {
+  opacity: 1;
+}
+
+/* Optional: Add GPU acceleration hint for smoother animations */
+[class*="parallax-"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Example usage styles */
+.parallax-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.parallax-background {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-hidden,
+  .parallax-visible,
+  [class*="parallax-"] {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

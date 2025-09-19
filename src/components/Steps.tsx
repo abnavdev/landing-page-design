@@ -5,7 +5,7 @@ import { useScrollAnimation } from '../hooks/useParallax';
 
 const Steps: React.FC = () => {
   const { isVisible: titleVisible, ref: titleRef } = useScrollAnimation(0.2);
-  const { isVisible: imageVisible, ref: imageRef } = useScrollAnimation(0.1);
+  const { isVisible: imageVisible, ref: imageRef } = useScrollAnimation<HTMLImageElement>(0.1);
 
   return (
     <section className={styles.section} aria-hidden="true">

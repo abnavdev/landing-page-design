@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import React, { useCallback } from 'react';
+import type { ReactNode } from 'react';
 import { useParallax, useScrollAnimation } from '../hooks/useParallax';
 
 interface ParallaxSectionProps {
@@ -8,36 +9,59 @@ interface ParallaxSectionProps {
   className?: string;
   enableAnimation?: boolean;
   animationThreshold?: number;
+  offset?: number;
+  as?: React.ElementType;
 }
 
 const ParallaxSection: React.FC<ParallaxSectionProps> = ({
   children,
-  speed = 0.1,
+  speed = 0.3, // Reduced default speed for subtler effect
   direction = 'up',
   className = '',
   enableAnimation = true,
-  animationThreshold = 0.1
+  animationThreshold = 0.1,
+  offset = 0,
+  as: Component = 'div'
 }) => {
-  const { transform, ref: parallaxRef } = useParallax({ speed, direction });
+  const { transform, ref: parallaxRef } = useParallax({ speed, direction, offset });
   const { isVisible, ref: animationRef } = useScrollAnimation(animationThreshold);
 
-  // Combine refs
-  const setRefs = (element: HTMLElement | null) => {
-    if (parallaxRef) parallaxRef.current = element;
-    if (animationRef) animationRef.current = element;
-  };
+  // Combine refs using callback ref pattern
+  const setRefs = useCallback((element: HTMLDivElement | null) => {
+    if (parallaxRef) {
+      parallaxRef.current = element;
+    }
+    if (animationRef) {
+      animationRef.current = element;
+    }
+  }, [parallaxRef, animationRef]);
+
+  // Build animation classes
+  const animationClass = enableAnimation 
+    ? isVisible 
+      ? 'parallax-visible' 
+      : 'parallax-hidden'
+    : '';
+
+  // Combine all classes
+  const combinedClassName = [className, animationClass]
+    .filter(Boolean)
+    .join(' ');
 
   return (
-    <div
+    <Component
       ref={setRefs}
-      className={`${className} ${enableAnimation && isVisible ? 'parallax-visible' : ''}`}
+      className={combinedClassName}
       style={{ 
         transform,
-        transition: enableAnimation ? 'opacity 0.8s ease-out, transform 0.8s ease-out' : 'none'
+        willChange: 'transform', // Optimize for animations
+        transition: enableAnimation 
+          ? 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)' 
+          : 'none'
       }}
     >
       {children}
-    </div>
+    </Component>
   );
 };
 

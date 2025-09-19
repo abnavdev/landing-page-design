@@ -4,34 +4,16 @@
   display: flex;
   align-items: center;
   text-align: center;
-  background-size: 120% auto;
-  background-position: center top;
+  background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   position: relative; /* Ensure overlay is positioned relative to hero */
-  overflow: hidden;
-  will-change: transform;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    background-attachment: scroll; /* Fixed backgrounds can cause issues on mobile */
-    background-size: cover;
-  }
 }
 
 .content {
   position: relative;
   z-index: 1;
   color: white;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
-
-.content.slideIn {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Align content to the global 12-column grid: center content and span columns */
@@ -43,57 +25,28 @@
   text-align: left;
 }
 
-.slideInTitle {
+.hero h1 {
   font-size: 40px;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   margin-bottom: 8px;
   line-height: 1.2;
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: slideInFromLeft 1s ease-out 0.3s forwards;
 }
 
-.slideInText {
+.hero p {
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   font-size: 15px;
   margin-bottom: 30px;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 1.2px;
   font-weight: 200;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: slideInFromLeft 1s ease-out 0.6s forwards;
 }
 
-.slideInButtons {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  margin-top: 24px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideInFromBottom 1s ease-out 0.9s forwards;
-}
 
 .buttonRow {
   display: flex;
   flex-direction: row;
   gap: 16px;
   margin-top: 24px;
-}
-
-@keyframes slideInFromLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromBottom {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .overlay {

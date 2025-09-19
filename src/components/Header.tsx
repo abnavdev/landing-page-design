@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './Header.module.css'
 import logo from '../assets/logo.png'
 import Button from './Button'
@@ -8,7 +8,6 @@ import useScrollNavigation from '../hooks/useScrollNavigation'
 const Header: React.FC = () => {
   // NEW: State for mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const location = useLocation()
 
   // NEW: Use scroll navigation hook
   const { isHidden, hasScrolled } = useScrollNavigation()
