@@ -1,0 +1,123 @@
+.storySection {
+  background: white;
+  padding: 80px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.storyCard {
+  background: #f8f9fa;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.storyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #0066FF, #00BFFF);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.storyCard:hover::before {
+  transform: scaleX(1);
+}
+
+.storyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cardImage {
+  margin-bottom: 20px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.cardDescription {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .storyCard {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .storySection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .storyCard {
+    padding: 30px 20px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardDescription {
+    font-size: 14px;
+  }
+}

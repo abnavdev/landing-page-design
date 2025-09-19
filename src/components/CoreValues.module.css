@@ -1,0 +1,117 @@
+.valuesSection {
+  background: #E8F4F8;
+  padding: 80px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.valueCard {
+  background: white;
+  padding: 32px 24px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #E0E7FF;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+  border-color: #0066FF;
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.valueTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.valueDescription {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6B7280;
+}
+
+@media (max-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .valuesSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .sectionSubtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .valueCard {
+    padding: 30px 20px;
+  }
+
+  .valueTitle {
+    font-size: 18px;
+  }
+}

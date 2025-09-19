@@ -1,0 +1,96 @@
+.scrollIndicator {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+}
+
+.scrollIndicator.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.progressRing {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.progressSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progressBackground {
+  transition: stroke 0.3s ease;
+}
+
+.progressBar {
+  transition: stroke-dashoffset 0.1s ease-out;
+}
+
+.scrollButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0056b3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.scrollButton:hover {
+  background: #0056b3;
+  color: white;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 86, 179, 0.3);
+}
+
+.scrollButton:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .scrollIndicator {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .progressRing {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .progressSvg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .progressSvg circle {
+    r: 20;
+    cx: 25;
+    cy: 25;
+  }
+  
+  .scrollButton {
+    width: 35px;
+    height: 35px;
+  }
+}

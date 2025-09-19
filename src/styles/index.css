@@ -1,0 +1,112 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Prevent horizontal scroll when using full-bleed sections */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Use border-box globally to ensure padding/border are included in width calculations */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  max-width: calc(100vw - 160px);
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0px 80px;
+}
+
+/* Responsive side margins */
+@media (max-width: 599px) {
+  /* Mobile: smaller side margins */
+  .container {
+    gap: 12px;
+    max-width: calc(100vw - 24px);
+    margin: 0 12px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  /* Tablet: medium side margins */
+  .container {
+    gap: 16px;
+    max-width: calc(100vw - 64px);
+    margin: 0 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop: original 80px margin */
+  .container {
+    gap: 20px;
+  }
+}
+
+/* Parallax and animation styles */
+.parallax-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Smooth transitions for all parallax elements */
+.parallax-section {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Performance optimizations for parallax */
+.parallax-bg {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Floating animation for interactive elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Subtle pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

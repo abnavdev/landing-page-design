@@ -1,0 +1,323 @@
+.section {
+  /* Keep the section positioned normally and use a pseudo element for the full-bleed background.
+     This avoids moving the section element itself (which can cause horizontal scroll). */
+  position: relative;
+  padding: 160px 0;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: #E2F2F3;
+  z-index: -1;
+}
+
+
+.heroTitle {
+  margin: 0;
+  font-size: 50px;
+  line-height: 1.05;
+  color: #0056b3;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.slideInTitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Constrain content to the same inline margins as the global .container */
+.inner {
+  width: 100%;
+  max-width: calc(100vw - 252px); /* account for 126px side paddings each side per design */
+  margin: 0 auto;
+  padding: 0 24px; /* small inner padding for mobile */
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+@media (max-width: 599px) {
+  .inner {
+    max-width: calc(100vw - 24px);
+    padding: 0 12px;
+    gap: 48px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .inner {
+    max-width: calc(100vw - 64px);
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    max-width: calc(100vw - 120px);
+    padding: 0 24px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 480px;
+  }
+
+  .block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blockTitle, .stepTitle {
+    color: #4A4E5E;
+    font-size: 24px;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .blockDesc, .stepDesc {
+    color: #717998;
+    font-size: 16px;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .ladder {
+    width: 480px;
+    height: 400px;
+    object-fit: contain;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  }
+
+  .ladder:not(.slideInImage) {
+    opacity: 0.3;
+    transform: translateX(20px) scale(0.95);
+  }
+
+  .ladder.slideInImage {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  @media (max-width: 1023px) {
+    .row {
+      flex-direction: column-reverse;
+      gap: 40px;
+    }
+
+    .leftColumn {
+      width: 100%;
+    }
+
+    .ladder {
+      width: 320px;
+      height: auto;
+      align-self: center;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 480px;
+  position: relative;
+}
+
+/* Add connecting line between steps */
+.leftColumn::before {
+  content: '';
+  position: absolute;
+  left: 28px; /* Center of the badge (56px / 2) */
+  top: 56px; /* Start after first badge */
+  bottom: 56px; /* End before last badge */
+  width: 2px;
+  background: #e0e0e0;
+  z-index: 0;
+}
+
+/* Ensure badges appear above the connecting line */
+.badge {
+  z-index: 1;
+  position: relative;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s ease-out;
+}
+
+.leftColumn > div {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s ease-out;
+}
+
+.leftColumn > div:not(.slideInStep) {
+  opacity: 0.4;
+  transform: translateX(-15px);
+}
+
+.slideInStep {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.rowTitle {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1976d2;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Inter, Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.25);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.blockTitle, .stepTitle {
+  color: #4A4E5E;
+  font-size: 24px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.blockDesc, .stepDesc {
+  color: #717998;
+  font-size: 16px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Offset descriptions so they align with the title text (not the circular badge). */
+@media (min-width: 1024px) {
+  .blockDesc, .stepDesc {
+    margin-left: calc(56px + 40px); /* badge width + gap */
+  }
+}
+
+/* Responsive badge sizing and connecting line adjustments */
+@media (max-width: 599px) {
+  .badge {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .rowTitle {
+    gap: 24px;
+  }
+
+  .leftColumn::before {
+    left: 24px; /* Center of smaller badge (48px / 2) */
+    top: 48px;
+    bottom: 48px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .badge {
+    width: 52px;
+    height: 52px;
+    font-size: 17px;
+  }
+
+  .rowTitle {
+    gap: 32px;
+  }
+
+  .leftColumn::before {
+    left: 26px; /* Center of medium badge (52px / 2) */
+    top: 52px;
+    bottom: 52px;
+  }
+}
+
+.ladder {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1023px) {
+  .row {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .leftColumn {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .ladder {
+    width: 320px;
+    max-width: 80%;
+    height: auto;
+    align-self: center;
+  }
+
+  .inner {
+    gap: 48px;
+    padding: 0 12px;
+  }
+  /* On small screens remove the description indent so text flows naturally */
+  .blockDesc, .stepDesc {
+    margin-left: 0;
+  }
+}

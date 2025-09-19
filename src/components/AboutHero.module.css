@@ -1,0 +1,182 @@
+.hero {
+  width: 100%; /* use 100% so horizontal margins/scrollbar don't create overflow */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  position: relative; /* Ensure overlay is positioned relative to hero */
+  overflow: hidden;
+
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(backgroundImage); 
+  background-size: 120% auto;
+  background-position: var(backgroundPosition, center top);
+  background-repeat: no-repeat;
+
+  /* rotate only the image */
+  transform: rotate(180deg);
+  transform-origin: top left;
+
+  /* if you *must* keep a parallax feel, avoid background-attachment: fixed */
+  /* and simulate with JS/scroll effects instead */
+  z-index: 0;
+}
+
+.overlay,
+.content {
+  position: relative;
+  z-index: 1; /* keep on top of the rotated image */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; /* Fixed backgrounds can cause issues on mobile */
+    background-size: cover;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.content.slideIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Align content to the global 12-column grid: center content and span columns */
+.content {
+  grid-column: 1 / span 4; /* center with 2 column gutters on left/right (3-10) */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.slideInTitle {
+  font-size: 40px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInFromLeft 1s ease-out 0.3s forwards;
+}
+
+.slideInText {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1.2px;
+  font-weight: 200;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInFromLeft 1s ease-out 0.6s forwards;
+}
+
+.slideInButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInFromBottom 1s ease-out 0.9s forwards;
+}
+
+.buttonRow {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(16, 16, 16, 0.4);
+}
+
+/* Responsive styles */
+@media (max-width: 599px) {
+  .hero {
+    height: 80vh; /* Reduce height on mobile for better fit */
+  }
+
+  .content {
+    grid-column: 1 / span 12; /* Span full width on mobile */
+    text-align: center; /* Center text on mobile */
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 28px; /* Smaller font on mobile */
+    margin-bottom: 12px;
+  }
+
+  .hero p {
+    font-size: 14px; /* Smaller font on mobile */
+    margin-bottom: 20px;
+    letter-spacing: 0.8px;
+  }
+
+  .buttonRow {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    gap: 12px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .hero {
+    height: 90vh; /* Medium height on tablet */
+  }
+
+  .content {
+    grid-column: 1 / span 8; /* Span more columns on tablet */
+  }
+
+  .hero h1 {
+    font-size: 36px; /* Medium font on tablet */
+  }
+
+  .hero p {
+    font-size: 15px; /* Keep similar on tablet */
+  }
+
+  .buttonRow {
+    gap: 14px; /* Slightly smaller gap on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop styles are default */
+}

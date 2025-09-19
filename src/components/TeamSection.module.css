@@ -1,0 +1,117 @@
+.teamSection {
+  background: white;
+  padding: 80px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.teamCard {
+  background: linear-gradient(135deg, #e8f4ff 0%, #f0f7ff 100%);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #d1e7ff;
+  transition: all 0.3s ease;
+}
+
+.teamCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
+}
+
+.memberImage {
+  font-size: 64px;
+  margin-bottom: 24px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memberName {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.memberRole {
+  font-size: 16px;
+  font-weight: 400;
+  color: #0066FF;
+  margin-left: 8px;
+}
+
+.memberDescription {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .teamSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .sectionSubtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .teamCard {
+    padding: 30px 20px;
+  }
+
+  .memberName {
+    font-size: 20px;
+  }
+
+  .memberRole {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
