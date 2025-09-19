@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './CTASection.module.css'
+import styles from '../styles/CTASection.module.css'
+import Button from './Button'
 
 const CTASection: React.FC = () => {
   return (
@@ -11,8 +12,9 @@ const CTASection: React.FC = () => {
       </div>
 
       <div className={styles.mainContent}>
-        <div className={styles.contentWrapper}>
-          <div className={styles.leftContent}>
+        <div className="container">
+          <div className={styles.contentWrapper}>
+            <div className={styles.leftContent}>
             <h1 className={styles.title}>
               Ready to Unlock<br />
               Your Full Potential?
@@ -21,9 +23,9 @@ const CTASection: React.FC = () => {
               Join thousands of students who are already achieving their academic<br />
               goals with personalized tutoring that actually works.
             </p>
-            <button className={styles.ctaButton}>
+            <Button variant="primary" className={styles.ctaButton}>
               START YOUR FREE TRIAL
-            </button>
+            </Button>
           </div>
 
           <div className={styles.rightContent}>
@@ -34,15 +36,16 @@ const CTASection: React.FC = () => {
                   placeholder="Your Email Address"
                   className={styles.emailInput}
                 />
-                <button type="submit" className={styles.submitButton}>
+                <Button type="submit" variant="secondary" className={styles.submitButton}>
                   Schedule a Demo
-                </button>
+                </Button>
               </div>
               <label className={styles.checkbox}>
                 <input type="checkbox" />
                 <span>I agree that my submitted data is being collected and stored.</span>
               </label>
             </form>
+            </div>
           </div>
         </div>
       </div>

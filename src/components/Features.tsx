@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Features.module.css';
+import styles from '../styles/Features.module.css';
 import { useScrollAnimation, useParallax } from '../hooks/useParallax';
 import tutorsIcon from '../assets/tutors.svg';
 import learningIcon from '../assets/learning.svg';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './ScrollIndicator.module.css';
+import styles from '../styles/ScrollIndicator.module.css';
 
 const ScrollIndicator: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);

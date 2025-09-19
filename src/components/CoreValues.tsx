@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './CoreValues.module.css'
+import styles from '../styles/CoreValues.module.css'
 import favoriteIcon from '../assets/favorite.png'
 import adsClickIcon from '../assets/ads_click.png'
 import globeIcon from '../assets/globe.png'

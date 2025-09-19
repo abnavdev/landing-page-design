@@ -76,17 +76,22 @@
 }
 
 .contentWrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+  /* Let the global .container provide side margins and 12-column grid. */
+  width: 100%;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  /* inner 12-column grid to align with global container columns */
+  grid-template-columns: repeat(12, 1fr);
+  gap: 40px;
   align-items: center;
+  /* occupy most of the global container columns; adjust as needed */
+  grid-column: 1 / -1;
 }
 
 .leftContent {
   color: white;
+  /* Span most of the width on desktop */
+  grid-column: 1 / span 6;
 }
 
 .title {
@@ -109,8 +114,9 @@
   border: none;
   padding: 16px 32px;
   border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -119,6 +125,11 @@
 .ctaButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.rightContent {
+  /* Right column for the form */
+  grid-column: 7 / -1;
 }
 
 .signupForm {
@@ -165,6 +176,7 @@
 
 .submitButton:hover {
   background: #0052CC;
+  color: white;
 }
 
 .checkbox {

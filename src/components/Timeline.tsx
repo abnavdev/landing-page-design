@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Timeline.module.css';
+import styles from '../styles/Timeline.module.css';
 import { useScrollAnimation } from '../hooks/useParallax';
 
 const Steps: React.FC = () => {

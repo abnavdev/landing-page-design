@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
-import styles from './Footer.module.css';
+import styles from '../styles/Footer.module.css';
+import Button from './Button';
 
 export default function Footer(): ReactElement {
   return (
@@ -36,7 +37,7 @@ export default function Footer(): ReactElement {
               <a className={styles.link} href="#">Find Tutors</a>
               <a className={styles.link} href="#">How It Works</a>
               <a className={styles.link} href="#">Pricing</a>
-            </div>
+            </div>  
             <div className={styles.linkCol}>
               <div className={styles.colTitle}>Success Stories</div>
               <a className={styles.link} href="#">Become a Tutor</a>
@@ -56,7 +57,7 @@ export default function Footer(): ReactElement {
             <div>Get Study Tips & Resources</div>
             <div className={styles.subscribeRow}>
               <input className={styles.input} type="email" placeholder="Enter your email" aria-label="email" />
-              <button className={styles.btn}>SUBSCRIBE</button>
+              <Button type="button" variant="primary" className={styles.btn}>SUBSCRIBE</Button>
             </div>
         </aside>
 

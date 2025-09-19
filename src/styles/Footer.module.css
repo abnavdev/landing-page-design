@@ -133,10 +133,20 @@
   background:#1976d2; /* blue-ish */
   color: white;
   border: none;
-  padding: 10px 16px;
+  padding: 10px 24px;
   border-radius: 999px;
   cursor: pointer;
   box-shadow: 0 6px 14px rgba(25,118,210,0.18);
+  /* Text styling */
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .divider {

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Hero.module.css'
+import styles from '../styles/Hero.module.css'
 import aboutHeroImage from '../assets/aboutHero.jpg'
 import Button from './Button'
 import { useParallaxBackground, useScrollAnimation } from '../hooks/useParallax'

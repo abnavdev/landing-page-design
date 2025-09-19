@@ -21,7 +21,8 @@
 }
 
 .loginOverride {
-  /* empty base; will be combined with Button's variant class */
+  /* base override for login Button; kept intentionally minimal */
+  display: inline-block;
 }
 
 .header.scrolled .loginOverride {
@@ -135,6 +136,16 @@
   margin: 3px 0;
   transition: 0.3s;
   display: block;
+}
+
+/* When header switches to scrolled (white bg), make hamburger lines blue for contrast */
+.header.scrolled .hamburgerLine {
+  background-color: #024781;
+}
+
+.hamburger:focus-visible .hamburgerLine {
+  outline: 2px solid rgba(2,71,129,0.15);
+  outline-offset: 2px;
 }
 
 .hamburger.active .hamburgerLine:nth-child(1) {

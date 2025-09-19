@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './AboutStory.module.css'
+import styles from '../styles/AboutStory.module.css'
 import storyImage1 from '../assets/ab6599366939ceb1016065402fbd8291c0a96bf0.jpg'
 import storyImage2 from '../assets/f4f6b3a7d803869031170313d2521a39a83671bf.jpg'
 import storyImage3 from '../assets/d12f52111e61fc0d9fc29f6cbfa31232cf1ee790.jpg'

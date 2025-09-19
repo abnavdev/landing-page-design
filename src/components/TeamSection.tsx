@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './TeamSection.module.css'
+import styles from '../styles/TeamSection.module.css'
 
 const TeamSection: React.FC = () => {
   const teamMembers = [

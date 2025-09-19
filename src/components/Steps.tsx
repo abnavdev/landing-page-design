@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Steps.module.css';
+import styles from '../styles/Steps.module.css';
 import ladder from '../assets/ladder.png';
 import { useScrollAnimation } from '../hooks/useParallax';
 

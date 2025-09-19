@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Header.module.css'
+import styles from '../styles/Header.module.css'
 import logo from '../assets/logo.png'
 import Button from './Button'
 import useScrollNavigation from '../hooks/useScrollNavigation'
