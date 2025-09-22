@@ -1,0 +1,175 @@
+:root{
+  --tier-bg: #FEFEFE;
+  --tier-outline: rgba(197,197,197,0.30);
+  --card-radius: 16px;
+  --shadow: 0px 0px 20px rgba(72,72,72,0.10);
+}
+
+.card{
+  width: 100%;
+  /* allow the card to grow if content needs more space; keep a sensible minimum for visual parity */
+  min-height: 640px;
+  height: auto;
+  padding: 40px 40px;
+  background: var(--tier-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--card-radius);
+  outline: 1px var(--tier-outline) solid;
+  outline-offset: -1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* fixed height for title area */
+  min-height: 120px;
+}
+
+.title{
+  color: #2B2B2B;
+  font-size: 32px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 700;
+}
+
+.subtitle{
+  color: #A3A3A3;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  max-width: 240px;
+}
+
+.priceRow{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 8px;
+  /* fixed height for price area */
+  min-height: 40px;
+}
+
+.price{
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.priceAmount{
+  color: #2B2B2B;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.priceSuffix{
+  color: #2B2B2B;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.divider{
+  width: 320px;
+  height: 0;
+  outline: 1px #848484 solid;
+  outline-offset: -0.5px;
+  margin-bottom: 24px;
+}
+
+.features{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* flexible area: take remaining space, allow scroll if content overflows */
+  flex: 1 1 auto;
+  /* allow features to expand the card height instead of scrolling */
+  min-height: 320px;
+  overflow-y: visible;
+}
+
+.featureItem{
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.featureIcon{
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3551D4; /* icon color */
+}
+
+.featureIcon svg{
+  width: 24px;
+  height: 24px;
+}
+
+.featureLabel{
+  color: #636363;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ctaWrap{
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  padding: 20px 110px;
+  /* fixed CTA area */
+  flex: 0 0 92px;
+  min-height: 92px;
+}
+
+.ctaWrap button{
+  border-radius: 10px;
+  outline: 1px #3551D4 solid;
+  outline-offset: -1px;
+  /* wider button */
+  padding: 14px 48px;
+  min-width: 220px;
+}
+
+/* Scoped override for the secondary button when used inside this card */
+.localSecondary {
+  /* ensure the default secondary transparent background remains but text is blue */
+  background: transparent !important;
+  color: #3551D4 !important;
+  outline: 1px #3551D4 solid !important;
+}
+
+.localSecondary:hover {
+  background: #3551D4 !important;
+  color: #FFFFFF !important;
+}
+
+.featured{
+  border: 1px solid #3551D4;
+}
+
+/* Mobile: remove fixed heights so cards can flow naturally */
+@media (max-width: 599px) {
+  .card {
+    height: auto;
+    padding: 24px 24px;
+  }
+
+  .top, .priceRow, .ctaWrap {
+    flex: 0 0 auto;
+    min-height: auto;
+  }
+
+  .features {
+    overflow: visible;
+    flex: 0 0 auto;
+  }
+}

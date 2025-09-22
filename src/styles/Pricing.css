@@ -1,0 +1,67 @@
+.pricing-page header .navItem,
+.pricing-page header .nav-item{  
+  color: #024781 !important;
+  background: transparent !important;
+}
+
+.pricing-page header .secondaryBtn,
+.pricing-page header .login-override {
+  color: #024781 !important;
+  outline: 1px solid #024781 !important;
+  background: transparent !important;
+}
+
+.pricing-page header .login-override {
+  border: 1px solid #024781 !important;
+  padding: 14px 40px !important;
+  border-radius: 40px !important;
+}
+
+/* Grid placement for pricing tiers: use the global 12-col container */
+.pricing-page .container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.pricing-page .tier {
+  grid-column: span 4; /* default desktop: 4 columns each */
+  display: flex;
+  justify-content: center; /* center card inside the column span */
+}
+
+/* Billing toggle styles */
+.pricing-page .billing-toggle {
+  display: inline-flex;
+  background: #F4F7FF;
+  border-radius: 999px;
+  padding: 6px;
+  gap: 6px;
+}
+
+.pricing-page .billing-toggle .option {
+  border: none;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #29407A;
+}
+
+.pricing-page .billing-toggle .option.active {
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(41,64,122,0.12);
+}
+
+@media (max-width: 1024px) {
+  .pricing-page .tier {
+    grid-column: span 6; /* tablet: 2 per row */
+  }
+}
+
+@media (max-width: 599px) {
+  .pricing-page .tier {
+    grid-column: span 12; /* mobile: full width */
+  }
+}

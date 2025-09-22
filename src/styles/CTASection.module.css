@@ -78,7 +78,6 @@
 .contentWrapper {
   /* Let the global .container provide side margins and 12-column grid. */
   width: 100%;
-  padding: 0 40px;
   display: grid;
   /* inner 12-column grid to align with global container columns */
   grid-template-columns: repeat(12, 1fr);
