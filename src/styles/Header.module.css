@@ -273,6 +273,18 @@
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .header {
     padding: 12px 0px;
+  .forceBlue .navItem,
+  .forceBlue .secondaryBtn,
+  .forceBlue .loginOverride {
+    color: #024781;
+  }
+
+  .forceBlue .primaryBtn {
+    background: transparent;
+    color: #024781;
+    outline: 1px solid #024781;
+    outline-offset: -1px;
+  }
   }
   
   .nav {
@@ -290,6 +302,31 @@
   .primaryBtn {
     padding: 13px 22px;
   }
+  
+  /* NEW CSS Rules for forceBlue state */
+  .forceBlue .navItem,
+  .forceBlue .secondaryBtn,
+  .forceBlue .loginOverride {
+    color: #024781 !important;
+  }
+  
+  /* Login override (class applied on the Button via header) */
+  .forceBlue .loginOverride {
+    color: #024781 !important;
+    background: transparent !important;
+    border: 1px solid #024781 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Keep Start Free Trial as filled blue by default; if you prefer outlined instead, uncomment the rules below */
+  /*
+  .forceBlue .primaryBtn {
+    background: transparent !important;
+    color: #024781 !important;
+    outline: 1px solid #024781 !important;
+  }
+  */
 }
 
 /* Mac/Desktop: 1440px - 1919px */

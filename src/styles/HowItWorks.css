@@ -1,0 +1,18 @@
+.howitworks-page header .navItem,
+.howitworks-page header .nav-item{  
+  color: #024781 !important;
+  background: transparent !important;
+}
+
+.howitworks-page header .secondaryBtn,
+.howitworks-page header .login-override {
+  color: #024781 !important;
+  outline: 1px solid #024781 !important;
+  background: transparent !important;
+}
+
+.howitworks-page header .login-override {
+  border: 1px solid #024781 !important;
+  padding: 14px 40px !important;
+  border-radius: 40px !important;
+}

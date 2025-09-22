@@ -5,7 +5,11 @@ import logo from '../assets/logo.png'
 import Button from './Button'
 import useScrollNavigation from '../hooks/useScrollNavigation'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  forceBlue?: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ forceBlue = false }) => {
   // NEW: State for mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -18,18 +22,19 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className={`${styles.header} ${isHidden ? styles.hidden : ''} ${hasScrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${isHidden ? styles.hidden : ''} ${hasScrolled ? styles.scrolled : ''} ${forceBlue ? styles.forceBlue : ''}`}>
       <div className="container">
         <Link to="/" className={styles.logoLink}>
           <img className={styles.logo} src={logo} alt="Logo" />
         </Link>
         <div className={styles.nav}>
-          <Link to="/" className={`${styles.navItem} nav-item`}>Home</Link>
-          <Link to="/about" className={`${styles.navItem} nav-item`}>About</Link>
-          <Link to="/tutors" className={`${styles.navItem} nav-item`}>Find Tutors</Link>
-          <Link to="/pricing" className={`${styles.navItem} nav-item`}>Pricing</Link>
+          <Link to="/" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>Home</Link>
+          <Link to="/about" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>About</Link>
+          <Link to="/how-it-works" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>How it works</Link>
+          <Link to="/tutors" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>Find Tutors</Link>
+          <Link to="/pricing" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>Pricing</Link>
             <div className={styles.buttons}>
-            <Button variant="secondary" className={`${styles.loginOverride} login-override`}>Login</Button>
+            <Button variant="secondary" className={`${styles.loginOverride} login-override ${forceBlue ? 'force-blue-login' : ''}`}>Login</Button>
             <Button variant="primary">Start Free Trial</Button>
           </div>
         </div>
@@ -53,6 +58,9 @@ const Header: React.FC = () => {
         </Link>
         <Link to="/about" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
           About
+        </Link>
+        <Link to="/how-it-works" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
+          How it works
         </Link>
         <Link to="/tutors" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
           Find Tutors

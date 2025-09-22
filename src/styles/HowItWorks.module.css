@@ -1,0 +1,47 @@
+.container {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.lead {
+  color: #555;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.step {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.step h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.125rem;
+}
+
+.step p {
+  margin: 0;
+  color: #666;
+}
+
+/* Page-scoped header overrides to match Tutors page styling */
+/* Header overrides were moved to Header.module.css and are applied via the Header's `forceBlue` class. */

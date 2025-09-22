@@ -1,0 +1,82 @@
+.section {
+  width: 100vw; /* full viewport width for background bleed */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* center the full-bleed element without negative margins */
+  padding-top: 120px;
+  background: #EBFBFC;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  max-width: calc(100vw - 160px);
+  grid-column: 3 / span 8; /* Center content spanning 8 columns (3-10) */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  display: flex;
+  text-align: center;
+  padding: 120px 0;
+}
+
+.title {
+  color: #4A4E5E;
+  font-size: 56px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 700;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: #4A4E5E;
+  font-size: 16px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 400;
+  word-wrap: break-word;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 599px) {
+  .content {
+    max-width: calc(100vw - 24px);
+    margin: 0 12px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .content {
+    max-width: calc(100vw - 64px);
+    margin: 0 32px;
+  }
+}
+
+/* Adjust font sizes and spacing for smaller screens so hero remains readable and doesn't collide with header */
+@media (max-width: 599px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .heroContainer {
+    padding-top: 72px; /* slightly smaller header on mobile */
+    min-height: calc(100vh - 72px);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+}

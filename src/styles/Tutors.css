@@ -9,7 +9,7 @@
 
 /* Tutors page header overrides: make nav items and login button blue only on the Tutors page */
 .tutors-page header .navItem,
-.tutors-page header .nav-item{
+.tutors-page header .nav-item{  
   color: #024781 !important;
   background: transparent !important;
 }

@@ -97,6 +97,27 @@ html, body {
   animation: pulse 2s ease-in-out infinite;
 }
 
+/* Utility classes used by Header to force blue text on light backgrounds */
+.force-blue-text {
+  color: #024781 !important;
+}
+
+.force-blue-login {
+  color: #024781 !important;
+  background: transparent !important;
+  border: 1px solid #024781 !important;
+  padding: 14px 40px !important;
+  border-radius: 40px !important;
+}
+
+/* Page-scoped header rules for How It Works page to ensure header appears blue on light hero */
+.howitworks-page header .nav-item,
+.howitworks-page header .navItem {
+  color: #024781 !important;
+}
+
+/* Page-scoped header rules for How It Works page are defined in HowItWorks.module.css */
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   html {
