@@ -7,6 +7,8 @@ import PriceTier from '../components/PriceTier'
 import '../styles/Pricing.css'
 import '../styles/Pricing.css'
 import ScrollIndicator from '../components/ScrollIndicator'
+import ParallaxSection from '../components/ParallaxSection'
+import Decorators from '../components/common/Decorators'
 
 const Pricing: React.FC = () => {
   const [billing, setBilling] = useState<'monthly' | 'annual'>('monthly')
@@ -37,7 +39,12 @@ const Pricing: React.FC = () => {
   return (
     <div className="parallax-container pricing-page">
   <Header />
-  <PricingHero />
+  <ParallaxSection speed={0.08} direction="up">
+        <div style={{ position: 'relative' }}>
+          <PricingHero />
+          <Decorators count={2} seed={10} />
+        </div>
+  </ParallaxSection>
       <section style={{padding: '80px 0'}}>
         {/* Billing toggle (kept outside the grid container so tiers can use the 12-col grid) */}
         <div style={{display: 'flex', justifyContent: 'center', marginBottom: 32}}>
@@ -82,7 +89,12 @@ const Pricing: React.FC = () => {
         </div>
       </section>
 
-      <CTASection />
+      <ParallaxSection speed={0.08} direction="up">
+        <div style={{ position: 'relative' }}>
+          <CTASection />
+          <Decorators count={2} seed={10} />
+        </div>
+      </ParallaxSection>
       <Footer />
       <ScrollIndicator />
     </div>
