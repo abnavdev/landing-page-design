@@ -349,9 +349,10 @@
 
 /* Hover preview panel (initially hidden) */
 .tutor-card__preview {
-  position: fixed; /* position relative to viewport */
-  right: 80px; /* space from right edge */
-  top: 120px; /* position toward top as requested */
+  position: absolute; /* position relative to the card */
+  left: 100%; /* position to the right edge of the card */
+  top: 0; /* align with the top of the card */
+  margin-left: 40px; /* add spacing between card and preview */
   width: 360px;
   padding: 20px;
   background: #FEFEFE;
