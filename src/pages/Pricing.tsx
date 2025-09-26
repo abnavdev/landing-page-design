@@ -6,6 +6,7 @@ import PricingHero from '../components/PricingHero'
 import PriceTier from '../components/PriceTier'
 import '../styles/Pricing.css'
 import '../styles/Pricing.css'
+import ScrollIndicator from '../components/ScrollIndicator'
 
 const Pricing: React.FC = () => {
   const [billing, setBilling] = useState<'monthly' | 'annual'>('monthly')
@@ -83,6 +84,7 @@ const Pricing: React.FC = () => {
 
       <CTASection />
       <Footer />
+      <ScrollIndicator />
     </div>
   )
 }

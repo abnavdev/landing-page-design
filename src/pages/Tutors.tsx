@@ -5,6 +5,7 @@ import '../styles/Tutors.css'
 import TutorHero from '../components/TutorHero'
 import TutorList from '../components/TutorList'
 import CTASection from '../components/CTASection'
+import ScrollIndicator from '../components/ScrollIndicator'
 
 const Tutors: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Tutors: React.FC = () => {
       </main>
       <CTASection />
       <Footer />
+      <ScrollIndicator />
     </div>
   )
 }
