@@ -16,7 +16,7 @@ const Tutors: React.FC = () => {
       <ParallaxSection speed={0.08} direction="up">
         <div style={{ position: 'relative' }}>
           <TutorHero />
-          <Decorators count={2} seed={10} />
+          <Decorators count={1} seed={10} />
         </div>
       </ParallaxSection>
       <main className="section tutors-section">

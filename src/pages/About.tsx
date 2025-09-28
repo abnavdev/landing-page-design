@@ -16,7 +16,10 @@ const About: React.FC = () => {
   return (
     <div className="parallax-container">
       <Header />
-      <AboutHero />
+      <div style={{ position: 'relative' }}>
+          <AboutHero />
+          <Decorators count={2} seed={7} />
+        </div>
       <ParallaxSection speed={0.1} direction="up">
         <div style={{ position: 'relative' }}>
           <AboutStory />
@@ -36,7 +39,10 @@ const About: React.FC = () => {
         </div>
       </ParallaxSection>
       <ParallaxSection speed={0.12} direction="up">
-        <Timeline />
+        <div style={{ position: 'relative' }}>
+          <Timeline />
+          <Decorators count={2} seed={2} />
+        </div>
       </ParallaxSection>
       <ParallaxSection speed={0.1} direction="up">
         <div style={{ position: 'relative' }}>
