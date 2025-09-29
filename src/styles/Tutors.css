@@ -27,6 +27,12 @@
   border-radius: 40px !important;
 }
 
+/* Make hamburger lines blue on Tutors page to match login override */
+.tutors-page header .hamburgerLine,
+.tutors-page header .hamburger .hamburgerLine {
+  background-color: #024781 !important;
+}
+
 @media (max-width: 1024px) {
   .tutors-section .inner,
   .tutors-section {

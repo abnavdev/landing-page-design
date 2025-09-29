@@ -33,6 +33,7 @@ const Header: React.FC<HeaderProps> = ({ forceBlue = false }) => {
           <Link to="/how-it-works" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>How it works</Link>
           <Link to="/tutors" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>Find Tutors</Link>
           <Link to="/pricing" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>Pricing</Link>
+          <Link to="/contact" className={`${styles.navItem} nav-item ${forceBlue ? 'force-blue-text' : ''}`}>Contact</Link>
             <div className={styles.buttons}>
             <Button variant="secondary" className={`${styles.loginOverride} login-override ${forceBlue ? 'force-blue-login' : ''}`}>Login</Button>
             <Button variant="primary">Start Free Trial</Button>
@@ -41,13 +42,13 @@ const Header: React.FC<HeaderProps> = ({ forceBlue = false }) => {
         
         {/* NEW: Hamburger Menu Button */}
         <button
-          className={`${styles.hamburger} ${isMobileMenuOpen ? styles.active : ''}`}
+          className={`${styles.hamburger} hamburger ${isMobileMenuOpen ? styles.active : ''}`}
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
-          <span className={styles.hamburgerLine}></span>
-          <span className={styles.hamburgerLine}></span>
-          <span className={styles.hamburgerLine}></span>
+          <span className={`${styles.hamburgerLine} hamburgerLine`}></span>
+          <span className={`${styles.hamburgerLine} hamburgerLine`}></span>
+          <span className={`${styles.hamburgerLine} hamburgerLine`}></span>
         </button>
       </div>
       
@@ -67,6 +68,9 @@ const Header: React.FC<HeaderProps> = ({ forceBlue = false }) => {
         </Link>
         <Link to="/pricing" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
           Pricing
+        </Link>
+        <Link to="/contact" className={`${styles.mobileNavItem} nav-item`} onClick={toggleMobileMenu}>
+          Contact
         </Link>
         <div className={styles.mobileButtons}>
           <button className={`${styles.secondaryBtn} login-override`} onClick={toggleMobileMenu}>

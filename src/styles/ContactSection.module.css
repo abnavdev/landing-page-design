@@ -1,0 +1,225 @@
+/* ContactSection.module.css */
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 40px 80px;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.header {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+
+.title {
+  align-self: stretch;
+  text-align: center;
+  color: #4A4E5E;
+  font-size: 48px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.description {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  color: #4A4E5E;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.cardsContainer {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.card {
+  grid-column: span 3;
+  width: 100%;
+  height: 307px;
+  padding: 52px 36px;
+  background: #FEFEFE;
+  box-shadow: 0px 0px 20px rgba(53, 81, 212, 0.10);
+  border-radius: 16px;
+  outline: 1px solid rgba(53, 81, 212, 0.40);
+  outline-offset: -1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 30px rgba(53, 81, 212, 0.15);
+}
+
+.card:nth-child(2) {
+  padding: 52px 49px;
+}
+
+.cardLast {
+  grid-column: span 3;
+  flex: 1 1 0;
+  padding: 52px 48px;
+}
+
+.iconColor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3551D4;
+  font-size: 45px;
+}
+
+.iconColor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Email icon */
+.card:nth-child(1) .iconColor::before {
+  content: '📧';
+}
+
+/* Phone icon */
+.card:nth-child(2) .iconColor::before {
+  content: '📞';
+}
+
+/* Location icon */
+.card:nth-child(3) .iconColor::before {
+  content: '📍';
+}
+
+/* Time icon */
+.card:nth-child(4) .iconColor::before {
+  content: '⏰';
+}
+
+.cardTitle {
+  text-align: center;
+  color: #4A4E5E;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 23px;
+  word-wrap: break-word;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardPrimary {
+  text-align: center;
+  color: #3551D4;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.cardSecondary {
+  text-align: center;
+  color: #4A4E5E;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cardsContainer {
+    gap: 20px;
+  }
+  
+  .card {
+    grid-column: span 3;
+  }
+  
+  .cardLast {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 20px;
+    gap: 40px;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .description {
+    font-size: 14px;
+  }
+  
+  .cardsContainer {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+  }
+  
+  .card {
+    grid-column: span 4;
+  }
+  
+  .cardLast {
+    grid-column: span 4;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+  
+  .description {
+    font-size: 12px;
+  }
+  
+  .cardsContainer {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  
+  .card {
+    grid-column: span 4;
+    padding: 32px 24px;
+    height: auto;
+  }
+  
+  .cardLast {
+    grid-column: span 4;
+  }
+}

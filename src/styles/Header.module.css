@@ -309,6 +309,12 @@
   .forceBlue .loginOverride {
     color: #024781 !important;
   }
+
+  /* Ensure hamburger lines are blue when header is forced to blue state */
+  .forceBlue .hamburgerLine,
+  .forceBlue .hamburger .hamburgerLine {
+    background-color: #024781 !important;
+  }
   
   /* Login override (class applied on the Button via header) */
   .forceBlue .loginOverride {

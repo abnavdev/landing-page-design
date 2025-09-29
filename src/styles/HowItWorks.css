@@ -16,3 +16,9 @@
   padding: 14px 40px !important;
   border-radius: 40px !important;
 }
+
+/* Make hamburger lines blue on How It Works page to match login override */
+.howitworks-page header .hamburgerLine,
+.howitworks-page header .hamburger .hamburgerLine {
+  background-color: #024781 !important;
+}

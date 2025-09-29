@@ -1,8 +1,10 @@
+
 .pricing-page header .navItem,
-.pricing-page header .nav-item{  
+.pricing-page header .nav-item {
   color: #024781 !important;
   background: transparent !important;
 }
+
 
 .pricing-page header .secondaryBtn,
 .pricing-page header .login-override {
@@ -11,10 +13,17 @@
   background: transparent !important;
 }
 
+
 .pricing-page header .login-override {
   border: 1px solid #024781 !important;
   padding: 14px 40px !important;
   border-radius: 40px !important;
+}
+
+/* Make hamburger lines blue on Pricing page to match login override */
+.pricing-page header .hamburgerLine,
+.pricing-page header .hamburger .hamburgerLine {
+  background-color: #024781 !important;
 }
 
 /* Grid placement for pricing tiers: use the global 12-col container */
