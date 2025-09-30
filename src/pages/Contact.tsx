@@ -38,7 +38,12 @@ const Contact: React.FC = () => {
 							</div>
 						</ParallaxSection>
 
-				<CTASection />
+				<ParallaxSection speed={0.15} direction="up">
+							<div style={{ position: 'relative' }}>
+							<CTASection />
+							<Decorators count={1} seed={4} />
+							</div>
+						</ParallaxSection>
 			</main>
 
 			<Footer />

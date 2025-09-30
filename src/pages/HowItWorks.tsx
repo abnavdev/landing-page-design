@@ -16,7 +16,7 @@ const HowItWorks: React.FC = () => {
       <ParallaxSection speed={0.1} direction="up">
         <div style={{ position: 'relative' }}>
           <HowItWorksHero />
-          <Decorators count={3} seed={16} />
+          <Decorators count={3} seed={4} />
         </div>
       </ParallaxSection>
       <ParallaxSection speed={0.1} direction="up">

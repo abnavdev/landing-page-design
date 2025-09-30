@@ -11,9 +11,19 @@ type DecoratorsProps = {
 
 const available = [decor1, decor2, decor3]
 
+// Simple seeded random number generator
+function seededRandom(seed: number) {
+  let x = seed
+  return function() {
+    x = (x * 9301 + 49297) % 233280
+    return x / 233280
+  }
+}
+
 const Decorators: React.FC<DecoratorsProps> = ({ count = 3, seed = 0 }) => {
   const items = useMemo(() => {
     const decorations = []
+    const rand = seededRandom(seed)
     
     // Calculate vertical zones to prevent overlap
     const minSpacing = 25 // minimum 25vh between items
@@ -24,15 +34,15 @@ const Decorators: React.FC<DecoratorsProps> = ({ count = 3, seed = 0 }) => {
       zones.push(i)
     }
     
-    // Shuffle zones for variety
-    const shuffledZones = [...zones].sort(() => Math.random() - 0.5)
+    // Shuffle zones deterministically
+    const shuffledZones = [...zones].sort(() => rand() - 0.5)
     
     // Determine distribution based on count
     let leftCount = Math.floor(count / 2)
     let rightCount = Math.ceil(count / 2)
     
     // Add some controlled randomness to distribution
-    if (Math.random() > 0.5) {
+    if (rand() > 0.5) {
       [leftCount, rightCount] = [rightCount, leftCount]
     }
     
@@ -42,7 +52,7 @@ const Decorators: React.FC<DecoratorsProps> = ({ count = 3, seed = 0 }) => {
     for (let i = 0; i < leftCount && zoneIndex < shuffledZones.length; i++) {
       const imageIndex = (seed + i) % available.length
       const top = shuffledZones[zoneIndex++]
-      const rotate = -15 + Math.random() * 30 // -15 to +15 degrees
+      const rotate = -15 + rand() * 30 // -15 to +15 degrees
       
       decorations.push({
         src: available[imageIndex],
@@ -50,7 +60,7 @@ const Decorators: React.FC<DecoratorsProps> = ({ count = 3, seed = 0 }) => {
         top,
         rotate,
         key: `decor-left-${i}`,
-        zIndex: Math.random() > 0.5 ? 4 : 6, // vary z-index for depth
+        zIndex: rand() > 0.5 ? 4 : 6, // vary z-index for depth
       })
     }
     
@@ -58,7 +68,7 @@ const Decorators: React.FC<DecoratorsProps> = ({ count = 3, seed = 0 }) => {
     for (let i = 0; i < rightCount && zoneIndex < shuffledZones.length; i++) {
       const imageIndex = (seed + leftCount + i) % available.length
       const top = shuffledZones[zoneIndex++]
-      const rotate = -15 + Math.random() * 30
+      const rotate = -15 + rand() * 30
       
       decorations.push({
         src: available[imageIndex],
@@ -66,7 +76,7 @@ const Decorators: React.FC<DecoratorsProps> = ({ count = 3, seed = 0 }) => {
         top,
         rotate,
         key: `decor-right-${i}`,
-        zIndex: Math.random() > 0.5 ? 4 : 6,
+        zIndex: rand() > 0.5 ? 4 : 6,
       })
     }
     

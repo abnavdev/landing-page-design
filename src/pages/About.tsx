@@ -41,7 +41,7 @@ const About: React.FC = () => {
       <ParallaxSection speed={0.12} direction="up">
         <div style={{ position: 'relative' }}>
           <Timeline />
-          <Decorators count={2} seed={2} />
+          <Decorators count={1} seed={17} />
         </div>
       </ParallaxSection>
       <ParallaxSection speed={0.1} direction="up">

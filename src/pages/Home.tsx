@@ -19,12 +19,12 @@ const Home: React.FC = () => {
       <Header />
       <div style={{ position: 'relative' }}>
         <Hero />
-        <Decorators count={2} seed={5} />
+        <Decorators count={2} seed={7} />
       </div>
       <ParallaxSection speed={0.1} direction="up">
         <div style={{ position: 'relative' }}>
           <Features />
-          <Decorators count={2} seed={1} />
+          <Decorators count={2} seed={2} />
         </div>
       </ParallaxSection>
       <ParallaxSection speed={0.15} direction="up">
@@ -42,14 +42,20 @@ const Home: React.FC = () => {
          <ParallaxSection speed={0.12} direction="up">
         <div style={{ position: 'relative' }}>
           <Reviews />
-          <Decorators count={2} seed={2} />
+          <Decorators count={2} seed={6} />
         </div>
       </ParallaxSection>
        <ParallaxSection speed={0.1} direction="up">
-        <PricingSection />
+        <div style={{ position: 'relative' }}>
+          <PricingSection />
+          <Decorators count={1} seed={5} />
+        </div>
       </ParallaxSection>
        <ParallaxSection speed={0.12} direction="up">
-        <StatsSection />
+        <div style={{ position: 'relative' }}>
+          <StatsSection />
+          <Decorators count={2} seed={6} />
+        </div>
       </ParallaxSection>
       <ParallaxSection speed={0.08} direction="up">
         <div style={{ position: 'relative' }}>
