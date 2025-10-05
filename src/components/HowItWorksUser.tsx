@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/User.module.css'
-import assessImg from '../assets/learning.svg'
+import assessImg from '../assets/assess.png'
 import matchImg from '../assets/match.png'
 import startImg from '../assets/start.png'
 
