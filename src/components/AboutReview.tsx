@@ -1,4 +1,7 @@
 import styles from '../styles/AboutReview.module.css';
+import ashley from '../assets/ashley.jpg'
+import chen from '../assets/chen.jpg'
+import sarah from '../assets/sarah.jpg'
 
 export default function Reviews() {
   return (
@@ -43,9 +46,9 @@ export default function Reviews() {
       </div>
       <div className={styles.reviewsSection}>
         <div className={styles.reviewCard}>
-          <div className={styles.reviewText}>Sarah went from struggling with math to scoring 1480 on her SAT and getting into Stanford.</div>
+          <div className={styles.reviewText}>Sarah went from struggling with math to scoring 1480 on her SAT and getting into Stanford. Her tutor provided structured lessons and weekly practice plans that made complex concepts feel approachable. We saw steady improvement and increased confidence.</div>
           <div className={styles.reviewerInfo}>
-            <img className={styles.smallAvatar} src="https://placehold.co/80x80" alt="avatar" />
+            <img className={styles.smallAvatar} src={sarah} alt="avatar" />
             <div className={styles.reviewerMeta}>
               <div className={styles.name}>Sarah C.</div>
               <div className={styles.location}>280+ SAT Points</div>
@@ -53,9 +56,9 @@ export default function Reviews() {
           </div>
         </div>
         <div className={styles.reviewCard}>
-          <div className={styles.reviewText}>Michael transformed his study habits and raised his GPA to earn a full scholarship.</div>
+          <div className={styles.reviewText}>Michael completely transformed his study habits and raised his GPA from a 3.2 to a 3.9, which helped him secure a full academic scholarship. The tutor focused on time management, exam strategies, and targeted review — the results were beyond our expectations.</div>
           <div className={styles.reviewerInfo}>
-            <img className={styles.smallAvatar} src="https://placehold.co/80x80" alt="avatar" />
+            <img className={styles.smallAvatar} src={chen} alt="avatar" />
             <div className={styles.reviewerMeta}>
               <div className={styles.name}>Michael R.</div>
               <div className={styles.location}>3.2 → 4.0 GPA</div>
@@ -63,9 +66,9 @@ export default function Reviews() {
           </div>
         </div>
         <div className={styles.reviewCard}>
-          <div className={styles.reviewText}>Emma overcame test anxiety and got into her dream college with personalized support.</div>
+          <div className={styles.reviewText}>Emma overcame severe test anxiety with compassionate, personalized coaching and practical breathing techniques. Her tutor built a steady routine of practice tests and detailed feedback, which not only improved scores but also her confidence.</div>
           <div className={styles.reviewerInfo}>
-            <img className={styles.smallAvatar} src="https://placehold.co/80x80" alt="avatar" />
+            <img className={styles.smallAvatar} src={ashley} alt="avatar" />
             <div className={styles.reviewerMeta}>
               <div className={styles.name}>Emma T.</div>
               <div className={styles.location}>Dream School Admit</div>

@@ -7,6 +7,7 @@ import ContactForm from '../components/ContactForm'
 import styles from '../styles/Contact.module.css'
 import ParallaxSection from '../components/ParallaxSection'
 import Decorators from '../components/common/Decorators'
+import contactHero from '../assets/contacthero.png'
 
 const Contact: React.FC = () => {
 
@@ -18,7 +19,7 @@ const Contact: React.FC = () => {
 						<div style={{ position: 'relative' }}>
 							<section className={styles.heroWrap}>
 									<div data-hero="light" className={styles.heroInner}>
-										<img src="https://placehold.co/1352x512" alt="Contact hero" className={styles.heroImage} />
+										<img src={contactHero} alt="Contact hero" className={styles.heroImage} />
 									</div>
 							</section>
 							<Decorators count={2} seed={10} />

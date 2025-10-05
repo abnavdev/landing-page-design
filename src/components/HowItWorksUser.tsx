@@ -1,5 +1,8 @@
 import React from 'react'
 import styles from '../styles/User.module.css'
+import assessImg from '../assets/learning.svg'
+import matchImg from '../assets/match.png'
+import startImg from '../assets/start.png'
 
 const HowItWorksUser: React.FC = () => {
   return (
@@ -30,7 +33,7 @@ const HowItWorksUser: React.FC = () => {
         <div className={styles.imageStack}>
           <img
             className={styles.img1}
-            src="https://placehold.co/498x494"
+            src={assessImg}
             alt="student placeholder"
           />
         </div>
@@ -41,7 +44,7 @@ const HowItWorksUser: React.FC = () => {
         <div className={styles.imageStack}>
           <img
             className={styles.img1}
-            src="https://placehold.co/498x494"
+            src={matchImg}
             alt="parents placeholder"
           />
         </div>
@@ -94,7 +97,7 @@ const HowItWorksUser: React.FC = () => {
         <div className={styles.imageStack}>
           <img
             className={styles.img1}
-            src="https://placehold.co/498x494"
+            src={startImg}
             alt="tutor placeholder"
           />
         </div>

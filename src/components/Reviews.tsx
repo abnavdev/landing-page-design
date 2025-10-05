@@ -1,4 +1,7 @@
 import styles from '../styles/Reviews.module.css';
+import ashley from '../assets/ashley.jpg'
+import chen from '../assets/chen.jpg'
+import sarah from '../assets/sarah.jpg'
 
 export default function Reviews() {
   return (
@@ -6,7 +9,7 @@ export default function Reviews() {
       <div className={styles.topSection}>
         <div className={styles.topContainer}>
           <div className={styles.leftGroup}>
-            <img className={styles.largeAvatar} src="https://placehold.co/170x170" alt="avatar" />
+            <img className={styles.largeAvatar} src={chen} alt="avatar" />
             <div className={styles.mainTitle}>Real Students.<br />Real Results.</div>
           </div>
           <div className={styles.rightGroup}>
@@ -44,7 +47,7 @@ export default function Reviews() {
         <div className={styles.reviewCard}>
           <div className={styles.reviewText}>I went from failing calculus to getting an A on my final exam. My tutor Sarah broke down complex problems into steps I could actually understand.</div>
           <div className={styles.reviewerInfo}>
-            <img className={styles.smallAvatar} src="https://placehold.co/80x80" alt="avatar" />
+            <img className={styles.smallAvatar} src={sarah} alt="avatar" />
             <div className={styles.reviewerMeta}>
               <div className={styles.name}>Emma Chen</div>
               <div className={styles.location}>Grade 11 Student, California</div>
@@ -54,7 +57,7 @@ export default function Reviews() {
         <div className={styles.reviewCard}>
           <div className={styles.reviewText}>Teaching on Ferryly lets me help students while working around my PhD schedule. The platform handles everything, so I can focus on what I love - teaching chemistry.</div>
           <div className={styles.reviewerInfo}>
-            <img className={styles.smallAvatar} src="https://placehold.co/80x80" alt="avatar" />
+            <img className={styles.smallAvatar} src={ashley} alt="avatar" />
             <div className={styles.reviewerMeta}>
               <div className={styles.name}>Dr. Priya Patel</div>
               <div className={styles.location}>Chemistry Tutor, New York</div>
@@ -64,7 +67,7 @@ export default function Reviews() {
         <div className={styles.reviewCard}>
           <div className={styles.reviewText}>My son was struggling with reading comprehension and falling behind. After just two months with his Ferryly tutor, he's reading above grade level and actually enjoys his homework time.</div>
           <div className={styles.reviewerInfo}>
-            <img className={styles.smallAvatar} src="https://placehold.co/80x80" alt="avatar" />
+            <img className={styles.smallAvatar} src={chen} alt="avatar" />
             <div className={styles.reviewerMeta}>
               <div className={styles.name}>Marcus Williams</div>
               <div className={styles.location}>Parent, Texas</div>

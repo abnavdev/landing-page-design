@@ -1,12 +1,15 @@
 import type { TutorData } from '../types/TutorTypes'
+import ashley from '../assets/ashley.jpg'
+import chen from '../assets/chen.jpg'
+import sarah from '../assets/sarah.jpg'
 
 export const sampleTutors: TutorData[] = [
   {
     id: "tutor-001",
     name: "Ashley Anderson",
     location: "California, USA",
-    profileImage: "https://placehold.co/180x220",
-    heroImage: "https://placehold.co/602x401",
+  profileImage: ashley,
+  heroImage: ashley,
     subjects: ["SAT Prep", "History", "Geometry", "Algebra"],
     description: "Experienced SAT Prep tutor with 12 years of teaching experience.",
     keyAchievements: [
@@ -34,8 +37,8 @@ export const sampleTutors: TutorData[] = [
     id: "tutor-002",
     name: "Michael Chen",
     location: "New York, USA",
-    profileImage: "https://placehold.co/180x220",
-    heroImage: "https://placehold.co/602x401",
+  profileImage: chen,
+  heroImage: chen,
     subjects: ["AP Physics", "Calculus", "Computer Science", "Chemistry", "Statistics"],
     description: "MIT graduate specializing in STEM subjects with proven track record.",
     keyAchievements: [
@@ -64,8 +67,8 @@ export const sampleTutors: TutorData[] = [
     id: "tutor-003",
     name: "Sarah Williams",
     location: "Texas, USA",
-    profileImage: "https://placehold.co/180x220",
-    heroImage: "https://placehold.co/602x401",
+  profileImage: sarah,
+  heroImage: sarah,
     subjects: ["English Literature", "Essay Writing", "Creative Writing"],
     description: "Award-winning English teacher helping students excel in writing and literature.",
     keyAchievements: [
